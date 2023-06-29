@@ -1,0 +1,17 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+.wrapper{
+    width: 100vw;
+    height: 100vh;
+    background-color: beige;
+}
+#dot{
+    height: 10px;
+    width: 10px;
+    border-radius: 50%;
+    background-color: blueviolet;
+    position: absolute;
+    transition: 0.1s linear;
+}
