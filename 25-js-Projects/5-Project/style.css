@@ -1,0 +1,40 @@
+
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+body{
+    background-color: #B486AB;
+}
+.container{
+    width: 90%;
+    height: 100vh;
+    padding: 20px;
+    background-color: #DD9AC2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* border: 2px solid black; */
+}
+.counter{
+    border: 5px solid #82667F;
+    border-radius: 8px;
+    margin: auto;
+    height: 450px;
+    width: 350px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.counter h1{
+    font-size: 3rem;
+}
+#count{
+    font-size: 8rem;
+}
+.btn{
+    margin: 20px;
+}
