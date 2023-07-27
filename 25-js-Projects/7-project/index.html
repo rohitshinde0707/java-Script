@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://kit.fontawesome.com/366f4b4073.js" crossorigin="anonymous"></script>
+        <style>
+            body{
+                background-color:white;
+                   
+            }
+            * {
+                box-sizing: border-box;
+            }
+            #searchInput {
+                width: 80%;
+                margin: 20px;
+                margin-left: 60px;
+                padding: 12px 20px 12px 40px;
+                
+
+            }
+            table{
+                font-family: arial,sans-serif;
+                width: 80%;
+                margin-left: 60px;
+        
+            }
+            td,th{
+                text-align: left;
+                padding: 15px;
+                
+            
+            }
+            .AdminTableBodyRow{
+                border: 1px solid black;
+            }
+            input[type="checkbox"]{
+              height: 20px;
+              width: 20px;
+              background-color: #eee;
+              margin-left: 20px;
+              margin-top: 20px;
+    
+        }
+
+        </style>
+        <script>
+            async function getData(){
+                const response = await fetch('https://geektrust.s3-ap-southeast-1.amazonaws.com/adminui-problem/members.json');
+            
+                var data = await response.json();
+                var admin = data;
+                for(var data of admin){
+                    create_table(data);
+                }
+            }
+            // function create_list(data){
+            //     let adminrow = document.createElement('li')
+            //     adminrow.className = 'admin_table_body_row';
+
+            //     let name = document.createElement('li')
+            //     name.innerText = data.name
+            //     let email= document.createElement('li')
+            //     email.innerText = data.email
+            //     let role = document.createElement('li')
+            //     role.innerText = data.role
+            //     let action = document.createElement('li')
+            //     action.innerText = data.action
+                
+
+            //     // adminrow.append(name,email,role,action);
+                
+            //     document.getElementById('admin_table').append(name,email,role,action);
+            // }
+            function create_table(data){
+                let adminRow = document.createElement('tr')
+                adminRow.className = 'AdminTableBodyRow';
+                adminRow.id = `row${data.id}`
+                let checkbox = document.createElement('input')
+                checkbox.type = 'checkbox';
+                checkbox.value = data.name;
+                checkbox.name = `delete_row`;
+                checkbox.id = data.id;
+                let name = document.createElement('td')
+                name.innerText = data.name
+                let email= document.createElement('td')
+                email.innerText = data.email
+                let role = document.createElement('td')
+                role.innerText = data.role
+                let action = document.createElement('td')
+                action.innerHTML = 
+                adminRow.append(checkbox,name,email,role,action)
+                document.getElementById('admin_table').append(adminRow);
+            }
+            
+            // function create_search(){
+            //     var i,input, filter,data_name, data_role, data_email,admintable,table_row;
+            //     input = document.getElementById("searchInput").value;
+            //     filter = input.value.toUpperCase();
+            //     admintable = document.getElementById("admin_table")
+            //     table_row = admintable.getElementsByTagName('tr');
+
+            //     for(i=0; i < table_row.length; i++ ){
+            //         data_name = table_row[i].getElementsByTagName('td')[0];
+            //         data_email = table_row[i].getElementsByTagName('td')[1];
+            //         data_role  = table_row[i].getElementsByTagName('td')[2];
+
+            //         txtvalue = txt
+
+            //     }
+            // }
+                 function select_all(checkBox){
+                    var chk = document.getElementsByName('delete_row');
+                    for(var i = 0; i < chk.length; i++){
+                        chk[i].checked = checkBox.checked;
+                    } 
+                }
+             function remove_row(){
+                let delete_rw =  document.getElementsByClassName('fa-trash');
+                for(let i=0;i < delete_rw.length;i++)
+                 delete_rw[i].addEventListener('click',function(){
+                    this.parentElement.parentElement.style.display = 'none';
+                });
+            }
+            function edit_row(){ 
+                
+                let edit_rw = document.getElementsByTagName('td');
+                  for(let i=0; i < edit_rw.length; i++)
+
+                   edit_rw[i].addEventListener('click',function(){
+                    this.parentElement.contentEditable = 'true';
+                   });
+                
+            }                
+        </script>
+
+    </head>
+    <body onload='getData();'>
+        <h1>Geektrust Admin UI</h1>
+        <div class="searchbar">
+    
+            <input type="text" id="searchInput" placeholder="search by a name, email or role." title="type in a name, email or role.">
+        </div>
+        <table id="admin_table">
+            <tr id="admin_names">
+                <th><input type="checkbox" name="select_all_checkbox" id="select_All" onclick="select_All(this)"></th>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Role</th>
+                <th>Action</th>
+            </tr>
+
+
+        </table>
+        <nav class= "pagination_cointainer">
+            <button class="pagination_button" id="prev_button" area-label="prev page" title="pervious page">&lt;</button>
+        
+             <div id="pagination_numbers"></div>
+
+            <button class="pagination_button" id="next_button" area-label="next page" title="next page">&gt;</button>
+        </nav>
+    </body>
+
+</html>
