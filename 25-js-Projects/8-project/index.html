@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8- project|| Image Carousel </title>
+    <link rel="stylesheet" href="style.css">
+
+    <!-- font awesome cdn -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="image fade">
+            <img width="100%"
+                src="https://images.pexels.com/photos/18296/pexels-photo.jpg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                alt="lamborgini image">
+        </div>
+        <div class="image fade">
+            <img src="https://images.pexels.com/photos/9914070/pexels-photo-9914070.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                width="100%" alt="">
+        </div>
+        <div class="image fade">
+            <img src="https://images.pexels.com/photos/9814984/pexels-photo-9814984.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                width="100%" alt="">
+        </div>
+        <div class="image fade">
+            <img src="https://images.pexels.com/photos/3752169/pexels-photo-3752169.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                width="100%" alt="">
+        </div>
+        <div class="image fade">
+            <img src="https://images.pexels.com/photos/10394775/pexels-photo-10394775.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                width="100%" alt="">
+        </div>
+        <div class="image fade">
+            <img src="https://images.pexels.com/photos/11191242/pexels-photo-11191242.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
+                width="100%" alt="">
+        </div>
+        <div class="image fade">
+           <img src="https://images.pexels.com/photos/6152797/pexels-photo-6152797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1https://images.pexels.com/photos/6152797/pexels-photo-6152797.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="100%" alt="">
+        </div>
+        <div class="image fade">
+            <img src="https://images.pexels.com/photos/10712939/pexels-photo-10712939.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" width="100%" alt="">
+        </div>
+
+        <i id="prev" onclick="show_image(-1)" class="fa-solid fa-chevron-left"></i>
+        <i id="next" onclick="show_image(1)" class="fa-solid fa-chevron-right"></i>
+
+        <div class="dots">
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+            <span class="dot"></span>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
