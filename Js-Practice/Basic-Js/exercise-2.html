@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print The Current Page</title>
+
+    <style>
+        button{
+            padding: 20px 40px;
+            outline: none;
+            border: 1px solid purple;
+            background-color: blueviolet;
+            cursor: pointer;
+            border-radius: 30px;
+            transition: 0.5s all ease;
+        }
+        button:hover
+        {
+            background-color: transparent;
+        }
+    </style>
+</head>
+<body>
+    <h2>Write a JavaScript program to print the current window contents.</h2>
+    <p>Click the Button to print the current Page:</p>
+    <button onclick="print_Current_Page()">Print This Page</button>
+
+    <script>
+        function print_Current_Page()
+        {
+            window.print();
+        }
+    </script>
+</body>
+</html>
