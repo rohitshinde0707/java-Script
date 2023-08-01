@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to calculate multiplication and division of two numbers</title>
+</head>
+<body>
+    <h2>JavaScript program to calculate multiplication and division of two numbers</h2>
+
+    <form action="">
+        <label for="first input">Enter First Number:</label>
+        <input type="text" id="firstnumber"><br>
+
+        <label for="second input">Enter Second Number:</label>
+        <input type="text" id="secondnumber"><br>
+        <input type="button" onclick="multipleBy()" value="Multiply"><br>
+        <input type="button" onclick="divideBy()" value="Divide">
+
+    </form>
+    <p>The division is : <br>
+    <span id="division"></span></p>
+
+    <p>The multiplication is : <br>
+        <span id="multiplication"></span></p>
+
+    <script>
+        // function for division
+        function divideBy()
+        {
+            num1 = document.getElementById("firstnumber").value;
+            num2 = document.getElementById("secondnumber").value;
+            document.getElementById("division").innerHTML = num1 / num2;
+
+        }
+        // Function for multiplication
+        function multipleBy()
+        {
+            num1 = document.getElementById("firstnumber").value;
+            num2 = document.getElementById("secondnumber").value;
+            document.getElementById("multiplication").innerHTML = num1 * num2;
+        }
+    </script>
+</body>
+</html>
