@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The extension of a filename.</title>
+    <style>
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            height: 450px;
+            width: 450px;
+            background-color: bisque;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        input,button
+        {
+            padding: 10px 30px;
+            font-size: 15px;
+        }
+        p{
+            font-size: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <h1>Get File Extension</h1>
+        
+        <label for="filename">Enter Filename:</label>
+        <input type="text" id="filename">
+        <button onclick="getFileExtension()">Get Extension</button>
+        <p id="result"></p>
+    </div>
+    <script>
+        // simple mwthod
+        filename = "system.php"
+        document.write(filename.split(".").pop());
+        document.write("<br>")
+        filename = "index.html"
+        document.write(filename.split(".").pop());
+
+        // get file extension using dom manupulation
+
+        function getFileExtension()
+        {
+            const filenameInput = document.getElementById("filename").value;
+            const fileExtension = extractFileExtension(filenameInput);
+            document.getElementById("result").textContent = "File Extension is: " + fileExtension;
+        }
+        function extractFileExtension(filename)
+        {   
+            // get last index of the dot(.)
+            const dotIndex = filename.lastIndexOf('.');
+
+            // check if dot exists in the filename and the dot is not the last char.;
+            if(dotIndex != -1 && dotIndex < filename.length - 1)
+            {
+                // extract the extension using substring method
+                const extension = filename.substring(dotIndex + 1);
+                return extension;
+            }
+
+            // return an empty string if no valid extension is found
+            return '';
+        }
+
+    </script>
+</body>
+</html>

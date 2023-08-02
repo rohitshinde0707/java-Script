@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Difference From 13</title>
+    <style>
+        .container {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            height: 450px;
+            width: 450px;
+            background-color: bisque;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <h2>Calculate Difference From 13</h2>
+
+        <label for="number">Enter A Number:</label>
+        <input type="number" id="number">
+        <button onclick="Difference()">Calculate</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function Difference()
+        {
+            const numberInput = document.getElementById("number").value;
+            const Difference = Math.abs(numberInput - 13);
+
+            // check if the number is greater than 13
+            if(numberInput > 13)
+            {
+                const  doubleDifference = Difference * 2;
+                document.getElementById("result").textContent = "Double the Absolute Difference :" + doubleDifference;
+            }
+            else
+            {
+                document.getElementById("result").textContent = "Absolute Difference :" + Difference;
+            }
+        }
+    </script>
+</body>
+
+</html>
