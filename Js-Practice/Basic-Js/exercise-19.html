@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.t</title>
+</head>
+<body>
+    <h2>Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.</h2>
+
+<input type="number" id="number1" placeholder="enter number ">
+<button onclick="checkWithinRange()">Check within Range</button>
+<p id="result"></p>
+    <script>
+        function checkWithinRange()
+
+        {
+            let input = document.getElementById("number1").value;
+            let abs_diff_100 = Math.abs(input - 100);
+            let abs_diff_400 = Math.abs(input - 400)
+
+            // conddition to check 
+            if(abs_diff_100 <= 20 || abs_diff_400 <= 20)
+            {
+                document.getElementById("result").textContent = "The Integer is within 20 of 100 or 400";
+            }
+            else
+            {
+                document.getElementById("result").textContent = "The Integer is Not within 20 of 100 or 400";
+
+            }
+        }
+    </script>
+</body>
+</html>
