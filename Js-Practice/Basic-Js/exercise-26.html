@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to check whether two numbers are in range 40..60 or in the range 70..100 inclusive</title>
+</head>
+<body>
+    
+    <h2>JavaScript program to check whether two numbers are in range 40..60 or in the range 70..100 inclusive</h2>
+
+    <input style="padding: 10px; border: none; outline: 1px solid black;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);" type="number"
+    id="number1" placeholder="Enter First Number">
+    <br><br>
+
+    <input style="padding: 10px; border: none; outline: 1px solid black;
+    box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.5);" type="number"
+    id="number2" placeholder="Enter First Number">
+
+    <button onclick="checkRange()" style="padding: 10px 15px; background-color: aquamarine; color: black; border: none; outline: 1px solid black;">Check Range</button>
+
+
+    <h4 id="result" style="font-size: 20px; color: blueviolet;"></h4>
+
+    <script>
+        function checkRange()
+        {
+            let x = parseInt(document.getElementById("number1").value);
+            let y = parseInt(document.getElementById("number2").value);
+            let resultRange = document.getElementById("result");
+
+            if((x >= 40 && x <= 60 && y >= 40 && y <= 60)
+            ||
+            (x >= 70 && x <= 100 && y >= 70 && y <= 100))
+            {
+                resultRange.textContent = `Ranges are : ${x} and ${y}`
+            } else{
+                resultRange.textContent = `Not in Ranges are : ${x} and ${y}`
+            }
+
+        }
+    </script>
+</body>
+</html>

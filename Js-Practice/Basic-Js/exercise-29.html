@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check Student's A+ Grade</title>
+</head>
+<body>
+    <!-- Heading for the page -->
+    <h2>Check Student's A+ Grade</h2>
+
+    <!-- Input field for entering marks -->
+    <input type="number" id="number" placeholder="Enter The Marks ">
+    <br><br>
+
+    <!-- Input field for entering exam type -->
+    <input type="text" placeholder="Enter Exam Type" id="examType">
+    <br><br>
+
+    <!-- Button to trigger the grade check -->
+    <button onclick="checkAPlus()">Check A+ Grade</button>
+    <br><br>
+
+    <!-- Display area for the result -->
+    <p id="result"></p>
+
+    <script>
+        // JavaScript code to check A+ grade
+        const checkAPlus = () => 
+        {
+            // Get the total marks entered by the user
+            const TotalMarks = parseInt(document.getElementById("number").value);
+
+            // Get the exam type entered by the user
+            const examType = document.getElementById("examType").value;
+
+            // Get the element where the result will be displayed
+            const resultElement = document.getElementById("result");
+
+            // Check if the exam type is "final-exam" and the total marks are between 90 and 100 (inclusive)
+            if(examType === "final-exam" && TotalMarks >= 80 && TotalMarks <= 100)
+            {
+                // Display congratulations message for A+ grade
+                resultElement.textContent = `Congratulations You Get A+ Grade`;
+            } 
+            // Check if the total marks are between 90 and 100 (inclusive) for any other exam type
+            else if(TotalMarks <= 100 && TotalMarks >= 80) 
+            {
+                // Display the A+ grade and total marks
+                resultElement.textContent = `you get A+ Grade and total Marks are ${TotalMarks}`;
+            }
+            else
+            {
+                // Display "Fail" if the conditions are not met for A+ grade
+                return resultElement.textContent = `Not A+ Grade`;
+            }
+        };
+    </script>
+</body>
+</html>

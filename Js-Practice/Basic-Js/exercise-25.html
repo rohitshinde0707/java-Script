@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to find a value which is nearest to 100 from two different given integer values</title>
+</head>
+<body>
+    
+    <h2>JavaScript program to find a value which is nearest to 100 from two different given integer values</h2>
+    <!-- Input fields to enter two different integer numbers -->
+    <input style="padding: 10px;" type="number" id="number1" placeholder="Enter First Number ">
+    <br><br>
+    <input style="padding: 10px;" type="number" id="number2" placeholder="Enter Second Number " >
+    <br><br>
+    <!-- Button to trigger the calculation when clicked -->
+    <button onclick="Difference()" style="padding: 10px 20px;">Check Close Number</button>
+
+    <!-- Paragraph to display the result of the calculation -->
+    <p id="result" style="color: blueviolet; font-size: 20px;"></p>
+
+    <script>
+        // Function to find the value closest to 100 from the two given integers
+        function Difference()
+        {   // Get the input values and convert them to integers
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
+            let resultElement = document.getElementById("result");
+            let target = 100;
+            // Calculate the absolute differences from the target value (100)
+            let diff1 = Math.abs(num1 - target);
+            let diff2 = Math.abs(num2 - target);
+
+            // Compare the absolute differences and display the result
+            if(diff1 < diff2)
+            {
+                resultElement.textContent = `The absolute difference  number is close to 100 is  ${diff1}`;
+            }
+            else
+            {
+                resultElement.textContent = `The absolute difference  number is close to 100 is  ${diff2}`;
+            }
+        }
+    </script>
+</body> 
+</html>

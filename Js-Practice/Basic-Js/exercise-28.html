@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program to check whether the last digit of three positive Integer</title>
+</head>
+<body>
+    <h2>Check last Digit Are same or not</h2>
+    
+    <!-- Input fields to enter three positive integers -->
+    <input type="number" placeholder="Enter The First Number" id="number1">
+    <br><br>
+    <input type="number" placeholder="Enter The Second Number" id="number2">
+    <br><br>
+    <input type="number" placeholder="Enter The Third Number" id="number3">
+    <br><br>
+    
+    <!-- Button to trigger the checkLastDigit function -->
+    <button onclick="checkLastDigit()">Check Last Digit</button>
+    <br><br>
+    
+    <!-- Area to display the result -->
+    <h5 id="result"></h5>
+
+    <script>
+        const checkLastDigit = () => {
+            // Get the values of the three input fields and convert them to integers
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
+            let num3 = parseInt(document.getElementById("number3").value);
+
+            // Get the last digit of each number
+            let last_digit_1 = num1 % 10;
+            let last_digit_2 = num2 % 10;
+            let last_digit_3 = num3 % 10;
+
+            // Get the element to display the result
+            let resultElement = document.getElementById("result");
+
+            // Check if the last digits of all three numbers are the same
+            if (last_digit_1 === last_digit_2 && last_digit_2 === last_digit_3) {
+                resultElement.textContent = `Last Digits are Same ${last_digit_1}, ${last_digit_2}, and ${last_digit_3}`;
+            } else {
+                resultElement.textContent = `Last Digits are different ${last_digit_1}, ${last_digit_2}, and ${last_digit_3}`;
+            }
+        };
+    </script>
+</body>
+</html>
