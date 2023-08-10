@@ -1,35 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.t</title>
+    <title>Write a JavaScript program to check two given integers whether one is positive and another one is negative.
+    </title>
 </head>
+
 <body>
-    <h2>Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.</h2>
+    <h2>Write a JavaScript program to check two given integers whether one is positive and another one is negative.</h2>
 
-<input type="number" id="number1" placeholder="enter number ">
-<button onclick="checkWithinRange()">Check within Range</button>
-<p id="result"></p>
+    <input type="number" id="number1">
+    <input type="number" id="number2">
+    <button onclick="checkSigns()">Check Numbers</button>
+    <p id="result"></p>
+
     <script>
-        function checkWithinRange()
+        function checkSigns() {
 
-        {
-            let input = document.getElementById("number1").value;
-            let abs_diff_100 = Math.abs(input - 100);
-            let abs_diff_400 = Math.abs(input - 400)
-
-            // conddition to check 
-            if(abs_diff_100 <= 20 || abs_diff_400 <= 20)
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
+            if (Number.isNaN(num1) || Number.isNaN(num2)) 
             {
-                document.getElementById("result").textContent = "The Integer is within 20 of 100 or 400";
+                document.getElementById("result").textContent = "Invalid Input"
             }
-            else
-            {
-                document.getElementById("result").textContent = "The Integer is Not within 20 of 100 or 400";
+            else if ((num1 >= 0 && num2 < 0) || (num1 < 0 && num2 >= 0)) {
+                document.getElementById("result").textContent = "One Integer is positive and the other is negative. !";
+            }
 
+            else {
+                document.getElementById("result").textContent = "Both Integers Have same signs (Either both are positive or booth are negative)"
             }
         }
     </script>
 </body>
+
 </html>

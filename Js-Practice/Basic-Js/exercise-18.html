@@ -3,28 +3,30 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50</title>
+    <title>Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.t</title>
 </head>
 <body>
-    <h2>JavaScript program to check two given numbers and return true if one of the number is 50 or if their sum is 50</h2>
+    <h2>Write a JavaScript program to check whether a given integer is within 20 of 100 or 400.</h2>
 
-    <input type="number" id="inputnumber" placeholder="Enter first number">
-    <input type="number" id="inputnumber2" placeholder="Enter Second Number:">
-    <button onclick="checkNumber()">Check Number</button>
-
+<input type="number" id="number1" placeholder="enter number ">
+<button onclick="checkWithinRange()">Check within Range</button>
+<p id="result"></p>
     <script>
-        function checkNumber()
-        {   
-            let num1 = document.getElementById("inputnumber").value;
-            let num2 = document.getElementById("inputnumber2").value;
+        function checkWithinRange()
 
-            if(num1 == 50 || num2 == 50 || num1 + num2 == 50)
-            {   
-                document.write("true")
+        {
+            let input = document.getElementById("number1").value;
+            let abs_diff_100 = Math.abs(input - 100);
+            let abs_diff_400 = Math.abs(input - 400)
+
+            // conddition to check 
+            if(abs_diff_100 <= 20 || abs_diff_400 <= 20)
+            {
+                document.getElementById("result").textContent = "The Integer is within 20 of 100 or 400";
             }
             else
             {
-                document.write("False")
+                document.getElementById("result").textContent = "The Integer is Not within 20 of 100 or 400";
 
             }
         }

@@ -1,15 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The extension of a filename.</title>
+    <title>Difference From 13</title>
     <style>
-        .container{
+        .container {
             position: absolute;
             top: 50%;
             left: 50%;
-            transform: translate(-50% , -50%);
+            transform: translate(-50%, -50%);
             height: 450px;
             width: 450px;
             background-color: bisque;
@@ -19,59 +20,39 @@
             justify-content: space-evenly;
             box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
         }
-        input,button
-        {
-            padding: 10px 30px;
-            font-size: 15px;
-        }
-        p{
-            font-size: 20px;
-        }
     </style>
 </head>
-<body>
-    <div class="container">
 
-        <h1>Get File Extension</h1>
-        
-        <label for="filename">Enter Filename:</label>
-        <input type="text" id="filename">
-        <button onclick="getFileExtension()">Get Extension</button>
+<body>
+
+
+    <div class="container">
+        <h2>Calculate Difference From 13</h2>
+
+        <label for="number">Enter A Number:</label>
+        <input type="number" id="number">
+        <button onclick="Difference()">Calculate</button>
         <p id="result"></p>
     </div>
+
     <script>
-        // simple mwthod
-        filename = "system.php"
-        document.write(filename.split(".").pop());
-        document.write("<br>")
-        filename = "index.html"
-        document.write(filename.split(".").pop());
-
-        // get file extension using dom manupulation
-
-        function getFileExtension()
+        function Difference()
         {
-            const filenameInput = document.getElementById("filename").value;
-            const fileExtension = extractFileExtension(filenameInput);
-            document.getElementById("result").textContent = "File Extension is: " + fileExtension;
-        }
-        function extractFileExtension(filename)
-        {   
-            // get last index of the dot(.)
-            const dotIndex = filename.lastIndexOf('.');
+            const numberInput = document.getElementById("number").value;
+            const Difference = Math.abs(numberInput - 13);
 
-            // check if dot exists in the filename and the dot is not the last char.;
-            if(dotIndex != -1 && dotIndex < filename.length - 1)
+            // check if the number is greater than 13
+            if(numberInput > 13)
             {
-                // extract the extension using substring method
-                const extension = filename.substring(dotIndex + 1);
-                return extension;
+                const  doubleDifference = Difference * 2;
+                document.getElementById("result").textContent = "Double the Absolute Difference :" + doubleDifference;
             }
-
-            // return an empty string if no valid extension is found
-            return '';
+            else
+            {
+                document.getElementById("result").textContent = "Absolute Difference :" + Difference;
+            }
         }
-
     </script>
 </body>
+
 </html>

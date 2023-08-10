@@ -3,76 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Temprature Converter</title>
-    <style>
-        body
-        {
-            background-color: beige;
-        }
-        .container{
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50% , -50%);
-            height: 450px;
-            width: 450px;
-            background-color: bisque;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
-            justify-content: space-evenly;
-            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
-        }
-        input{
-            padding: 10px 30px;
-            border-radius: 10px;
-            outline: 1px solid black;
-            border: none;
-        }
-        label,h1
-        {
-            font-size: 20px;
-        }
-        @media (max-width:500px) {
-            .container
-            {
-                width: 90%;
-                height: 80%;
-            }
-        }
-    </style>
+    <title>Write a JavaScript program to get the website URL (loading page).</title>
 </head>
 <body>
-    <div class="container">
+    
+    <h1>
+        Website URL:
+    </h1>
 
-        <h1>Temprature Converter</h1>
-        
-        <label for="Celsius">Celsius:</label>
-        <input type="number" id="celsius" oninput="convertToFahrenheit()">
-        <br><br>
-        
-        <label for="Fahrenheit">Fahrenheit:</label>
-        <input type="number" id="fahrenheit" oninput="convertToCelsius()">
-    </div>
-
+    <p id="url"></p>
     <script>
-        function convertToFahrenheit()
-        {
-            const celsiusInput = document.getElementById("celsius").value
-            const fahrenheitOutput = document.getElementById("fahrenheit");
-            const fahrenheit = (celsiusInput * 9 / 5) + 32;
-            fahrenheitOutput.value = fahrenheit.toFixed(3);
-        }
-
-        function convertToCelsius()
-        {
-            const fahrenheitInput = document.getElementById("fahrenheit").value;
-            const celsiusOutput = document.getElementById("celsius");
-            const celsius = (fahrenheitInput - 32) * ( 5 / 9);
-
-            celsiusOutput.value = celsius.toFixed(3);
-            
-        }
+        // getting the website location
+        const websiteURL = window.location.href;
+        
+        // displaying url
+        document.getElementById("url").innerHTML = websiteURL;
     </script>
 </body>
 </html>

@@ -1,39 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write a JavaScript program to check two given integers whether one is positive and another one is negative.
-    </title>
+    <title>JavaScript program to remove a character at the specified position of a given string and return the new string.</title>
 </head>
-
 <body>
-    <h2>Write a JavaScript program to check two given integers whether one is positive and another one is negative.</h2>
+    <h2>JavaScript program to remove a character at the specified position of a given string and return the new string.</h2>
 
-    <input type="number" id="number1">
-    <input type="number" id="number2">
-    <button onclick="checkSigns()">Check Numbers</button>
+    <button onclick="getUserInput()">Get User Input</button>
+
+    <h2 id="beforeResult"></h2>
     <p id="result"></p>
 
     <script>
-        function checkSigns() {
-
-            let num1 = parseInt(document.getElementById("number1").value);
-            let num2 = parseInt(document.getElementById("number2").value);
-            if (Number.isNaN(num1) || Number.isNaN(num2)) 
+        function removeCharAtPosition(inputstring, position)
+        {
+            if(position >= 0 && position < inputstring.length)
             {
-                document.getElementById("result").textContent = "Invalid Input"
-            }
-            else if ((num1 >= 0 && num2 < 0) || (num1 < 0 && num2 >= 0)) {
-                document.getElementById("result").textContent = "One Integer is positive and the other is negative. !";
+                // using the splice method 
+                let modifiedString = inputstring.split("");
+                modifiedString.splice(position, 1);
+                return modifiedString.join("");
+
+                // 
+                
             }
 
-            else {
-                document.getElementById("result").textContent = "Both Integers Have same signs (Either both are positive or booth are negative)"
+            else
+            {
+                return "Invalid Position ! Please Enter A valid Position"
+            }
+        }
+
+        function getUserInput()
+        {
+            let inputString = prompt("Enter A String");
+            let positionStr = prompt("Enter the Position to remove (from 0)");
+            let position = parseInt(positionStr);
+
+            if(!isNaN(position))
+            {   
+                document.getElementById("beforeResult").textContent = "Enterd String is :" + inputString;
+                let newstring = removeCharAtPosition(inputString, position);
+                document.getElementById("result").textContent = "Modified String: " + newstring;
+            }
+
+            else
+            {
+                document.getElementById("result").textContent = "Invalid Position Enter A valid Number"
             }
         }
     </script>
-</body>
 
+</body>
 </html>

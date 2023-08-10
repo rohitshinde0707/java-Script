@@ -3,21 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Write a JavaScript program to get the website URL (loading page).</title>
+    <title>Create a variable using a user-defined name</title>
 </head>
 <body>
     
-    <h1>
-        Website URL:
-    </h1>
-
-    <p id="url"></p>
     <script>
-        // getting the website location
-        const websiteURL = window.location.href;
-        
-        // displaying url
-        document.getElementById("url").innerHTML = websiteURL;
+        var name = "Rohit Shinde";
+        var age = 23;
+        this[name] = age;
+        document.write(name + "<br>" + this[name]);
     </script>
 </body>
 </html>

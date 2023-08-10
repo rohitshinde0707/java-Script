@@ -1,37 +1,62 @@
-<!-- ... Rest of the HTML code ... -->
+<!DOCTYPE html>
+<html lang="en">
 
-<script>
-    // Function to check the difference and sum of two numbers with 8
-    const checkDiff = () => {
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20
+        and if two numbers are same return 40.</title>
+</head>
 
-        // Get the values of the two input numbers and store them in variables
-        let num1 = parseInt(document.getElementById("number1").value);
-        let num2 = parseInt(document.getElementById("number2").value);
+<body>
 
-        // Check if the inputs are valid numbers
-        if (isNaN(num1) || isNaN(num2)) {
-            alert("Please enter valid numbers.");
-            return; // Exit the function if inputs are invalid
-        }
+    <h2>JavaScript program to check three given numbers, if the three numbers are same return 30 otherwise return 20 and
+        if two numbers are same return 40.</h2>
 
-        // Get the element to display the result
-        let resultElement = document.getElementById("result");
+    <!-- Input fields to enter three numbers -->
+    <input type="number" id="number1" placeholder="Enter first number">
+    <br><br>
+    <input type="number" id="number2" placeholder="Enter Second number">
+    <br><br>
+    <input type="number" id="number3" placeholder="Enter Third number">
+    <br><br>
 
-        // Check if either of the numbers is equal to 8
-        if (num1 === 8 || num2 === 8) {
-            // Display a message if either number is equal to 8
-            resultElement.textContent = `Number is Equal to 8`;
-        } else {
-            // Check if the sum or absolute difference of the two numbers is equal to 8
-            if (num1 + num2 === 8 || Math.abs(num1 - num2) === 8) {
-                // Display a message if the sum or absolute difference is equal to 8
-                resultElement.textContent = `Addition or absolute difference is equal to 8`;
-            } else {
-                // Display a message if neither condition is met
-                resultElement.textContent = `Addition or absolute difference is not equal to 8`;
+    <!-- Button to trigger the threeNumbers() function -->
+    <button onclick="threeNumbers()">Check Numbers</button>
+
+    <!-- Paragraph to display the result of the check -->
+    <p id="result"></p>
+
+    <script>
+        // Function to check the three input numbers and display the result
+        const threeNumbers = () => {
+            // Get the input values and convert them to integers
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
+            let num3 = parseInt(document.getElementById("number3").value);
+
+            // Get the element to display the result
+            let resultElement = document.getElementById("result");
+
+            // Check for invalid input (non-numeric or empty values)
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3)) {
+                resultElement.textContent = `Invalid Input!`;
+            }
+            // Check if all three numbers are the same
+            else if (num1 === num2 && num2 === num3) {
+                resultElement.textContent = `Three Numbers are same 30`;
+            }
+            // Check if two of the three numbers are the same
+            else if (num1 === num2 || num2 === num3 || num3 === num1) {
+                resultElement.textContent = `Two Numbers are same so return 40`;
+            }
+            // If none of the above conditions are met, all three numbers are different
+            else {
+                resultElement.textContent = `Numbers are not same so return 20`;
             }
         }
-    }
-</script>
+    </script>
 
-<!-- ... Rest of the HTML code ... -->
+</body>
+
+</html>

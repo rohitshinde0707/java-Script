@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reversed Given String</title>
+</head>
+<body>
+
+    <h2>Reversed Given String</h2>
+    
+    <!-- JavaScript code to reverse a string -->
+    <script>
+        // Prompt the user to input a string
+        let inputString = prompt("Enter A String To Be Reversed");
+
+        // Initialize an empty string to store the reversed string
+        let reverseString = "";
+
+        // Loop through each character in the input string
+        for(let i = inputString.length - 1; i >= 0; i--) {
+            // Append the current character to the reversed string
+            reverseString = reverseString + inputString[i];
+        }
+
+        // Display the reversed string on the webpage
+        document.write("Reversed String of Given String is: " + reverseString);
+    </script>
+</body>
+</html>

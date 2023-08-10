@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Capitalize First Letter of Given String</title>
+</head>
+<body>
+    <h2>Capitalize First Letter of Given String</h2>
+
+    <script>
+        // Initialize an empty string to store the result
+        let resultString = "";
+
+        // Prompt the user to input a string
+        let inputString = prompt("Enter a string:");
+
+        // Split the input string into an array of words
+        let words = inputString.split(" ");
+
+        // Loop through each word in the array
+        for (let i = 0; i < words.length; i++) {
+            // Get the current word
+            let currentWord = words[i];
+
+            // Capitalize the first letter of the current word
+            let capitalizedWord = currentWord.charAt(0).toUpperCase() + currentWord.slice(1);
+
+            // Append the modified word to the result string
+            resultString += capitalizedWord + " ";
+        }
+
+        // Display the resulting string with capitalized words
+        document.write("Resulting String is: " + resultString.trim());
+    </script>
+</body>
+</html>

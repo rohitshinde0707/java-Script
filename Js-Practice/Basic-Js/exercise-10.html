@@ -3,42 +3,75 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript program to calculate multiplication and division of two numbers</title>
+    <title>Temprature Converter</title>
+    <style>
+        body
+        {
+            background-color: beige;
+        }
+        .container{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50% , -50%);
+            height: 450px;
+            width: 450px;
+            background-color: bisque;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: space-evenly;
+            box-shadow: 1px 2px 5px rgba(0, 0, 0, 0.5);
+        }
+        input{
+            padding: 10px 30px;
+            border-radius: 10px;
+            outline: 1px solid black;
+            border: none;
+        }
+        label,h1
+        {
+            font-size: 20px;
+        }
+        @media (max-width:500px) {
+            .container
+            {
+                width: 90%;
+                height: 80%;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h2>JavaScript program to calculate multiplication and division of two numbers</h2>
+    <div class="container">
 
-    <form action="">
-        <label for="first input">Enter First Number:</label>
-        <input type="text" id="firstnumber"><br>
-
-        <label for="second input">Enter Second Number:</label>
-        <input type="text" id="secondnumber"><br>
-        <input type="button" onclick="multipleBy()" value="Multiply"><br>
-        <input type="button" onclick="divideBy()" value="Divide">
-
-    </form>
-    <p>The division is : <br>
-    <span id="division"></span></p>
-
-    <p>The multiplication is : <br>
-        <span id="multiplication"></span></p>
+        <h1>Temprature Converter</h1>
+        
+        <label for="Celsius">Celsius:</label>
+        <input type="number" id="celsius" oninput="convertToFahrenheit()">
+        <br><br>
+        
+        <label for="Fahrenheit">Fahrenheit:</label>
+        <input type="number" id="fahrenheit" oninput="convertToCelsius()">
+    </div>
 
     <script>
-        // function for division
-        function divideBy()
+        function convertToFahrenheit()
         {
-            num1 = document.getElementById("firstnumber").value;
-            num2 = document.getElementById("secondnumber").value;
-            document.getElementById("division").innerHTML = num1 / num2;
-
+            const celsiusInput = document.getElementById("celsius").value
+            const fahrenheitOutput = document.getElementById("fahrenheit");
+            const fahrenheit = (celsiusInput * 9 / 5) + 32;
+            fahrenheitOutput.value = fahrenheit.toFixed(3);
         }
-        // Function for multiplication
-        function multipleBy()
+
+        function convertToCelsius()
         {
-            num1 = document.getElementById("firstnumber").value;
-            num2 = document.getElementById("secondnumber").value;
-            document.getElementById("multiplication").innerHTML = num1 * num2;
+            const fahrenheitInput = document.getElementById("fahrenheit").value;
+            const celsiusOutput = document.getElementById("celsius");
+            const celsius = (fahrenheitInput - 32) * ( 5 / 9);
+
+            celsiusOutput.value = celsius.toFixed(3);
+            
         }
     </script>
 </body>

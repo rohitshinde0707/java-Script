@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to convert a given number to hours and minutes.</title>
+</head>
+
+<body>
+    <h2>JavaScript program to convert a given number to hours and minutes.</h2>
+
+    <!-- Input field for user to enter a number -->
+    <input placeholder="Enter A Number:" type="number" id="number">
+    <br><br>
+    <!-- Button to trigger the conversion -->
+    <button onclick="time()">Number to Hours & Min.</button>
+    <p id="result"></p>
+
+    <script>
+        function time() {
+            // Retrieve the input value and convert it to an integer
+            let num = parseInt(document.getElementById("number").value);
+
+            // Calculate hours and remaining minutes
+            let hours = Math.floor(num / 60);
+            let min = num % 60;
+
+            // Check if the input is invalid or less than or equal to 0
+            if (isNaN(num) || num <= 0) {
+                // Display error message
+                document.getElementById("result").textContent = `Invalid Input`;
+
+                // Reset button padding when input is invalid
+                document.querySelector("button").style.padding = "5px 10px";
+            } else {
+                // Display the converted time
+                document.getElementById("result").textContent = `${hours} Hour: ${min} Min.`;
+
+                // Increase button padding when input is valid
+                document.querySelector("button").style.padding = "10px";
+            }
+        }
+    </script>
+</body>
+
+</html>

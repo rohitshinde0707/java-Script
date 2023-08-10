@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Number Range Checker</title>
+</head>
+<body>
+    
+    <!-- Title heading -->
+    <h1>Number Range Checker</h1>
+
+    <!-- Input fields for the range and the number to be checked -->
+    <input type="number" id="range1" placeholder="Enter first number">
+    <br><br>
+    <input type="number" id="range2" placeholder="Enter last number">
+    <br><br>
+    <input type="number" id="number" placeholder="Enter Number:">
+    <br><br>
+    
+    <!-- Button to initiate the range checking process -->
+    <button onclick="checkRange()">Check Range</button>
+    
+    <!-- Element to display the result of the range check -->
+    <p id="result"></p>
+
+    <script>
+        // Function to check if a number is within a specified range
+        function checkDigit(x, y, n) {
+            return n >= x && n <= y;
+        }
+
+        // Function to perform the range check
+        function checkRange() {
+            // Get the values of the input fields
+            let x = parseInt(document.getElementById("range1").value);
+            let y = parseInt(document.getElementById("range2").value);
+            let n = parseInt(document.getElementById("number").value);
+
+            // Get the element where the result will be displayed
+            let resultElement = document.getElementById("result");
+
+            // Validate inputs and perform the range check
+            if (isNaN(x) || isNaN(y) || isNaN(n) || x > y) {
+                resultElement.textContent = "Please enter valid numbers and ensure the range is valid.";
+            } else {
+                // Check if the number is within the specified range
+                let condition = checkDigit(x, y, n);
+                // Compose and display the result message
+                let message = `Number ${n} is ${condition ? "" : "not "}within the range [${x}, ${y}] and the condition is ${condition}.`;
+                resultElement.textContent = message;
+            }
+        }
+    </script>
+</body>
+</html>

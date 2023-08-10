@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to check from three given numbers (non negative integers) that two or all of them have the
+        same rightmost digit</title>
+</head>
+<body>
+
+    <h2>JavaScript program to check from three given numbers (non negative integers) that two or all of them have the
+        same rightmost digit</h2>
+
+    <input type="number" id="number1" placeholder="Enter first number">
+    <br><br>
+    <input type="number" id="number2" placeholder="Enter Second number">
+    <br><br>
+    <input type="number" id="number3" placeholder="Enter Third number">
+    <br><br>
+    <button onclick="sameRightMost()">Right Most</button>
+    <br><br>
+
+    <p id="result"></p>
+
+    <script>
+        // Function to check if two or all of three numbers have the same rightmost digit
+        const sameRightMost = () => {
+            // Get input values from the form
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
+            let num3 = parseInt(document.getElementById("number3").value);
+
+            // Get the paragraph element where the result will be displayed
+            let resultElement = document.getElementById("result");
+
+            // Get the rightmost digits of each number
+            let rightmost1 = num1 % 10;
+            let rightmost2 = num2 % 10;
+            let rightmost3 = num3 % 10;
+
+            // Check for invalid input or negative numbers
+            if (isNaN(num1) || isNaN(num2) || isNaN(num3) || num1 < 0 || num2 < 0 || num3 < 0) {
+                resultElement.textContent = `Invalid Input`
+            }
+            else {
+                // Check if two or all of three numbers have the same rightmost digit
+                if ((rightmost1 == rightmost2 && rightmost1 == rightmost3) ||
+                    (rightmost1 == rightmost2) ||
+                    (rightmost1 == rightmost3) ||
+                    (rightmost2 == rightmost3)) {
+                    resultElement.textContent = `Two or all numbers have the same rightmost digit`;
+                }
+                else {
+                    resultElement.textContent = `The rightmost digits of the three numbers are different`;
+                }
+            }
+
+        }
+    </script>
+</body>
+</html>

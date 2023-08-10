@@ -4,58 +4,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sum Calculation || if equal then tripple sum</title>
-    <style>
-        .container
-        {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            height: 450px;
-            width: 450px;
-            background-color: bisque;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-around;
-            text-align: center;
-        }
-
-    </style>
+    <title>JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their
+        absolute difference if the specified number is greater than 19.</title>
 </head>
 
 <body>
-    <div class="container">
-        <h2>Sum Calculation if Number Equal then Tripple Sum</h2>
 
+    <h2>JavaScript program to compute the absolute difference between a specified number and 19. Returns triple their
+        absolute difference if the specified number is greater than 19.</h2>
 
-        <label for="num1">Enter First Number:</label>
-        <input type="number" id="num1">
-
-        <label for="num2">Enter Second Number:</label>
-        <input type="number" id="num2">
-
-        <button onclick="calculateSum()">Calculate</button>
-
-        <p id="result"></p>
-
-    </div>
-
+    <input type="number" id="numberinput" placeholder="Enter number here">
+    <button onclick="absoluteDifference()">Get Difference</button>
+    <p id="result"></p>
     <script>
-        function calculateSum() {
-            const num1 = parseInt(document.getElementById("num1").value);
-            const num2 = parseInt(document.getElementById("num2").value);
-            let sum;
-            
-            if (num1 === num2) {
-                sum = 3 * (num1 + num2);
+
+        function absoluteDifference() {
+
+            let number = document.getElementById("numberinput").value;
+            let difference = 0;
+
+            if (number === "" || isNaN(number)) {
+                document.getElementById("result").textContent = "please enter valid input";
+            }
+            else if (number <= 19) {
+                difference = 19 - number;
+                document.getElementById("result").textContent = "The Absolute Difference is :" + difference;
             }
             else {
-                sum = num1 + num2;
-            }
+                difference = (number - 19) * 3;
+                document.getElementById("result").textContent = "The triiple absolute Difference is " + difference;
 
-            document.getElementById("result").textContent = "result is:" + sum;
+            }
         }
     </script>
 </body>

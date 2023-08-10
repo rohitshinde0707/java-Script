@@ -3,55 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript program to remove a character at the specified position of a given string and return the new string.</title>
+    <title>JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7</title>
 </head>
 <body>
-    <h2>JavaScript program to remove a character at the specified position of a given string and return the new string.</h2>
-
-    <button onclick="getUserInput()">Get User Input</button>
-
-    <h2 id="beforeResult"></h2>
+    <h2>JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7</h2>
+    
+    <input type="number" id="number" placeholder="Enter NUmber Here">
+    <button onclick="checkNumber()">Check</button>
     <p id="result"></p>
 
     <script>
-        function removeCharAtPosition(inputstring, position)
+        function checkNumber()
         {
-            if(position >= 0 && position < inputstring.length)
+            let inputNumber = document.getElementById("number").value;
+            let number = parseInt(inputNumber);
+            let resultElement = document.getElementById("result");
+            // clear previous results
+            resultElement.innerText = ""
+            if(number <= 0)
             {
-                // using the splice method 
-                let modifiedString = inputstring.split("");
-                modifiedString.splice(position, 1);
-                return modifiedString.join("");
-
-                // 
-                
+                resultElement.textContent = "Invallid Input ! "
             }
-
+            else if(number % 3 === 0)
+            {
+                resultElement.textContent = "The Number is Multiple of 3"
+            }
+            else if(number % 7 === 0)
+            {
+                resultElement.textContent = "The Number is Multiple of 7"
+            }
             else
             {
-                return "Invalid Position ! Please Enter A valid Position"
-            }
-        }
-
-        function getUserInput()
-        {
-            let inputString = prompt("Enter A String");
-            let positionStr = prompt("Enter the Position to remove (from 0)");
-            let position = parseInt(positionStr);
-
-            if(!isNaN(position))
-            {   
-                document.getElementById("beforeResult").textContent = "Enterd String is :" + inputString;
-                let newstring = removeCharAtPosition(inputString, position);
-                document.getElementById("result").textContent = "Modified String: " + newstring;
-            }
-
-            else
-            {
-                document.getElementById("result").textContent = "Invalid Position Enter A valid Number"
+                resultElement.textContent = "The Number is Not multiple of 3 or 7"
             }
         }
     </script>
-
 </body>
 </html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15</title>
+</head>
+<body>
+    <!-- Heading for the program -->
+    <h2>JavaScript program to check two given integer values and return true if one of the number is 15 or if their sum or difference is 15</h2>
+    
+    <!-- Input fields for the two numbers -->
+    <input type="number" id="number1" placeholder="Enter first Number:">
+    <br><br>
+    <input type="number" id="number2" placeholder="Enter second Number:">
+    <br><br>
+    
+    <!-- Button to trigger the checkNumbers function -->
+    <button onclick="checkNumbers()">Check</button>
+    <br>
+    
+    <!-- Element to display the result of the conditions -->
+    <p id="result"></p>
+
+    <script>
+        // Function to check the specified conditions
+        function checkNumbers() {
+            // Get the values of the two input fields
+            const num1 = parseInt(document.getElementById("number1").value);
+            const num2 = parseInt(document.getElementById("number2").value);
+
+            // Get the element where the result will be displayed
+            const resultElement = document.getElementById("result");
+
+            // Check the specified conditions
+            if (num1 === 15 ||
+                num2 === 15 || (num1 + num2) === 15 || Math.abs(num1 - num2) === 15) {
+                resultElement.textContent = `Condition true`;
+            } else {
+                resultElement.textContent = `Condition false`;
+            }
+        }
+    </script>
+</body>
+</html>

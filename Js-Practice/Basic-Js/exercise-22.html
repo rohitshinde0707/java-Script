@@ -3,38 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7</title>
+    <title>JavaScript program to check whether two given integer values are in the range 50..99 (inclusive).</title>
 </head>
 <body>
-    <h2>JavaScript program to check whether a given positive number is a multiple of 3 or a multiple of 7</h2>
-    
-    <input type="number" id="number" placeholder="Enter NUmber Here">
-    <button onclick="checkNumber()">Check</button>
-    <p id="result"></p>
+    <h2>JavaScript program to check whether two given integer values are in the range 50..99 (inclusive).</h2>
+
+    <input type="number" id="number1" placeholder="Enter First Number">
+    <br><br>
+    <input type="number" id="number2" placeholder="Enter Second Number">
+    <br><br>
+    <button onclick="checkNumbers()">Check</button>
+    <h5 id="result"></h5>
 
     <script>
-        function checkNumber()
+        function checkNumbers()
         {
-            let inputNumber = document.getElementById("number").value;
-            let number = parseInt(inputNumber);
+            let number1 = document.getElementById("number1").value;
+            let number2 = document.getElementById("number2").value;
             let resultElement = document.getElementById("result");
-            // clear previous results
-            resultElement.innerText = ""
-            if(number <= 0)
+
+
+            if(number1 >= 50 && number1 <= 99 || number2 >= 50 && number2 <= 99)
             {
-                resultElement.textContent = "Invallid Input ! "
+                resultElement.textContent = "The number is between : 50 to 99 ";
             }
-            else if(number % 3 === 0)
-            {
-                resultElement.textContent = "The Number is Multiple of 3"
-            }
-            else if(number % 7 === 0)
-            {
-                resultElement.textContent = "The Number is Multiple of 7"
-            }
-            else
-            {
-                resultElement.textContent = "The Number is Not multiple of 3 or 7"
+
+            else{
+                resultElement.textContent = "the number is not between : 50 to 99"
             }
         }
     </script>

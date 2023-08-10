@@ -1,60 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check Student's A+ Grade</title>
+    <title>Program to check sum is in range of 50 to 80</title>
 </head>
+
 <body>
-    <!-- Heading for the page -->
-    <h2>Check Student's A+ Grade</h2>
+    <!-- Heading -->
+    <h2>Program to check sum is in the range of 50 to 80</h2>
 
-    <!-- Input field for entering marks -->
-    <input type="number" id="number" placeholder="Enter The Marks ">
+    <!-- Input fields for first and second numbers -->
+    <input type="number" id="number1" placeholder="Enter First Number">
+    <br><br>
+    <input type="number" id="number2" placeholder="Enter The Second Number">
     <br><br>
 
-    <!-- Input field for entering exam type -->
-    <input type="text" placeholder="Enter Exam Type" id="examType">
+    <!-- Button to trigger the sumInRange() function -->
+    <button onclick="sumInRange()">Check Range Of Sum</button>
     <br><br>
 
-    <!-- Button to trigger the grade check -->
-    <button onclick="checkAPlus()">Check A+ Grade</button>
-    <br><br>
-
-    <!-- Display area for the result -->
+    <!-- Paragraph to display the result -->
     <p id="result"></p>
 
+    <!-- JavaScript code -->
     <script>
-        // JavaScript code to check A+ grade
-        const checkAPlus = () => 
-        {
-            // Get the total marks entered by the user
-            const TotalMarks = parseInt(document.getElementById("number").value);
+        // Function to check the range of the sum
+        const sumInRange = () => {
+            // Get the values from the input fields and parse them to integers
+            let num1 = parseInt(document.getElementById("number1").value);
+            let num2 = parseInt(document.getElementById("number2").value);
 
-            // Get the exam type entered by the user
-            const examType = document.getElementById("examType").value;
+            // Get the result paragraph element
+            let resultElement = document.getElementById("result");
 
-            // Get the element where the result will be displayed
-            const resultElement = document.getElementById("result");
+            // Calculate the sum of the two numbers
+            let sumNum = num1 + num2;
 
-            // Check if the exam type is "final-exam" and the total marks are between 90 and 100 (inclusive)
-            if(examType === "final-exam" && TotalMarks >= 80 && TotalMarks <= 100)
-            {
-                // Display congratulations message for A+ grade
-                resultElement.textContent = `Congratulations You Get A+ Grade`;
-            } 
-            // Check if the total marks are between 90 and 100 (inclusive) for any other exam type
-            else if(TotalMarks <= 100 && TotalMarks >= 80) 
-            {
-                // Display the A+ grade and total marks
-                resultElement.textContent = `you get A+ Grade and total Marks are ${TotalMarks}`;
+            // Check if either of the input values is not a valid number
+            if (isNaN(num1) || isNaN(num2)) {
+                resultElement.textContent = `Invalid Output`;
             }
-            else
-            {
-                // Display "Fail" if the conditions are not met for A+ grade
-                return resultElement.textContent = `Not A+ Grade`;
+            // Check if the sum is within the range of 50 to 80
+            else if (sumNum >= 50 && sumNum <= 80) {
+                resultElement.textContent = `Sum is in the range of 50 to 80 and sum is ${sumNum}`;
             }
-        };
+            // If the sum is not within the range of 50 to 80
+            else {
+                resultElement.textContent = `Sum is not in the range of 50 to 80 and sum is ${sumNum}`;
+            }
+        }
     </script>
 </body>
+
 </html>
