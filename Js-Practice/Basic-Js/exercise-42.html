@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Validation</title>
+</head>
+<body>
+    
+    <form action="#" name="MyForm">
+        <label for="Password">Password:</label>
+        <input type="password" id="password" name="password" required><br><br>
+
+        <input type="submit" value="Submit">
+    </form>
+
+    <script>
+        document.forms["MyForm"].addEventListener("submit", function(event){
+            var password = document.getElementById("password").value;
+
+            var isValid = true;
+
+            if(!/[A-Z]/.test(password)){
+                alert("Password must contain at least one uppercase Letter");
+                isValid = false;
+            }
+
+            if(!/\d/.test(password)){
+                alert("Password must contain at least one digit");
+                isValid = false;
+            }
+
+            if(!/[!@#$%^&*()_+{}\[\]:;<>,.?~\-]/.test(password)){
+                alert("Password must contain at least one special Character.");
+                isValid = false;
+            }
+            if(!isValid){
+                event.preventDefault();
+            }
+            else{
+                alert("Password is correct:")
+            }
+        })
+    </script>
+</body>
+</html>

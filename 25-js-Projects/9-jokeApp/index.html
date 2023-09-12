@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joke Creator</title>
+    <!-- Add Bootstrap CSS link here -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+   <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container-fluid mt-3">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h1 class="head-text">Hindi, Marathi & English Joke's Creator</h1>
+            </div>
+        </div>
+
+        <div class="row main-content justify-content-center mt-3">
+            <div class="col-md-6 col-lg-4">
+                <div class="card jokecontainer">
+                    <div class="card-body">
+                    
+                      <p class="card-text" id="display">This is the content of the card.</p>
+                    </div>
+                    <div class="card-actions m-auto">
+                      <button class="main-btn m-3 " onclick="marathiJoke()" >Marathi</button>
+                      <button class="main-btn m-3 " onclick="hindiJoke()" >Hindi</button>
+                      <button class="main-btn m-3  " onclick="englishJoke()" >English</button>
+
+                    </div>
+                  </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- Add Bootstrap JS and jQuery scripts here (if needed) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
